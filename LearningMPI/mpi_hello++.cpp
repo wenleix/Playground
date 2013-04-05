@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
         }
     }
 
-    MPI_Finalize();
+    MPI::Finalize();
     return 0;
 }
 
