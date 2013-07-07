@@ -1,4 +1,4 @@
-//  Test unordered_map in C++0x
+//  Test unordered_map in C++11
 //  For GCC, it requires to be compiled with flag -std=c++0x
 
 #include <unordered_map>
