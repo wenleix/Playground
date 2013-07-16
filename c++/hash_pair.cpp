@@ -1,3 +1,5 @@
+//  Warning: This example is deprecated! Please use unordered_set / unordered_map in C++11 instead.
+
 #include <ext/hash_set>
 #include <ext/hash_map>
 #include <utility>
