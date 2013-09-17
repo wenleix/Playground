@@ -1,5 +1,6 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Vundle
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -11,18 +12,21 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
+"
+" original repos on github
 Bundle 'FreePeter/vim-scala'
-"" original repos on github
+Bundle 'Tagbar'
+Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'tpope/vim-rails.git'
-"" vim-scripts repos
+" vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
-"" non github repos
+" non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
-"" git repos on your local machine (ie. when working on your own plugin)
+" git repos on your local machine (ie. when working on your own plugin)
 "Bundle 'file:///Users/gmarik/path/to/plugin'
 " ...
 
@@ -37,8 +41,9 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 
-" End Vundle
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" End Vundle 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,14 +74,28 @@ set hid 			"Change buffer - without saving (No idea what does it mean)
 " Set backspace config
 set backspace=eol,start,indent	"No idea
 set whichwrap+=<,>,h,l			"No idea again
+
+"   Spell check
 set spell
+if !has("gui_running")
+" Avoid the spell check highlight problem under Ubuntu Console.
+"   TODO(wenleix): Try some better color scheme..
+    hi clear SpellBad
+    hi clear SpellCap
+    hi clear SpellRare
+    hi clear SpellLocal
+    hi SpellBad cterm=underline
+    hi SpellCap cterm=underline
+    hi SpellRare cterm=underline
+    hi SpellLocal cterm=underline
+endif
 
 set ignorecase 					"Ignore case when searching
-set smartcase
-set hlsearch "Highlight search things
-set incsearch "Make search act like search in modern browsers
+set smartcase                   " Case senstive when it is mixed
+set hlsearch                    "Highlight search things
+set incsearch                   "Make search act like search in modern browsers
 
-set magic "Set magic on, for regular expressions
+set magic                       "Set magic on, for regular expressions
 
 set showmatch "Show matching bracets when text indicator is over them
 set mat=2 "How many tenths of a second to blink
@@ -208,8 +227,7 @@ end
 nnoremap <SID><A-F12> <Plug>IMAP_JumpForward
 vnoremap <SID><A-F12> <Plug>IMAP_JumpForward
 
-"let g:Tex_MultipleCompileFormats='dvi,pdf'
-let g:Tex_MultipleCompileFormats='pdf'
+let g:Tex_DefaultTargetFormat='pdf'
 
 "   Let's turned off these silly things first
 let g:Imap_UsePlaceHolders=0
