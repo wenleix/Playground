@@ -4,7 +4,7 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -16,7 +16,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'FreePeter/vim-scala'
 Bundle 'Tagbar'
-Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'    " Use Vundle to provide vim-latex
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
